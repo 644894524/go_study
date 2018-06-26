@@ -23,7 +23,8 @@ func main(){
 
 
 	//前一个小时
-
+	timehour := stime.Unix()
+	fmt.Println( timehour.Format("02/01/2006 15:04:05 PM") )
 }
 
 
