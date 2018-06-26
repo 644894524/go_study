@@ -25,6 +25,7 @@ var ch chan string = make( chan string )
 func main(){
 	names := [...]string{"sunlong@yixia.com","zhaona@yixia.com"}
 	for key := range names {
+		//异步执行
 		go post_data( names[ key ] )
 		fmt.Println( <-ch )
 	}
