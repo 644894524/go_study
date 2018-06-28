@@ -7,6 +7,8 @@ import (
 	"strings"
 	"net/http"
 	"os"
+	//"encoding/json"
+	"encoding/json"
 )
 
 type config struct {
@@ -27,7 +29,10 @@ func main(){
 	for key := range names {
 		//异步执行
 		go post_data( names[ key ] )
-		fmt.Println( <-ch )
+		res := <-ch
+		//fmt.Println( res )
+		resformat := json.NewDecoder( strings.NewReader( res ) )
+		fmt.Println( resformat )
 	}
 }
 
