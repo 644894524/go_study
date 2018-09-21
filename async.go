@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 	//"encoding/json"
-	"encoding/json"
+	"net/mail"
 )
 
 type config struct {
@@ -30,9 +30,9 @@ func main(){
 		//异步执行
 		go post_data( names[ key ] )
 		res := <-ch
-		//fmt.Println( res )
-		resformat := json.NewDecoder( strings.NewReader( res ) )
-		fmt.Println( resformat )
+		fmt.Println( res )
+		//resformat := json.NewDecoder( strings.NewReader( res ) )
+		//fmt.Println( resformat )
 	}
 }
 
@@ -56,4 +56,22 @@ func post_data( name string ){
 	data, _ := ioutil.ReadAll(resp.Body)
 	rescode:= string(data)
 	ch <- rescode
+}
+
+
+func json_format( message []byte ){
+
+	//第二层解析
+	type ftwo struct {
+		id string
+		name string
+		key string
+	}
+
+	type fone struct {
+		code int
+		data ftwo
+	}
+
+
 }
