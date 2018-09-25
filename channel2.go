@@ -34,5 +34,8 @@ func main()  {
 
 	wg.Wait()
 
-	fmt.Println( arr )
+	fmt
+
+
+	.Println( arr )
 }
