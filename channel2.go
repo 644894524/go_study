@@ -4,6 +4,7 @@ import (
 	"fmt"
 	//"time"
 	"sync"
+	//"os"
 )
 
 var (
@@ -14,6 +15,7 @@ func main()  {
 
 	var ch = make( chan int, 1 )
 	var arr []int
+	var num int = 10
 
 	wg.Add( 1 )
 	go func( num int, at *[]int ){
@@ -22,8 +24,15 @@ func main()  {
 			*at = append( *at, <-ch )
 		}
 		wg.Done()
-	}( 10, &arr )
+	}( num, &arr )
+
+	go func( con *[]int ) {
+		for {
+			fmt.Println( len( *con ) )
+		}
+	}( &arr )
 
 	wg.Wait()
+
 	fmt.Println( arr )
 }
