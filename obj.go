@@ -31,4 +31,19 @@ func main(){
 	var strone string = str
 	strone = "hello"
 	fmt.Println( strone, str )
+
+
+	slice2 := make([]int, 3, 5)
+	slice2[0] = 1
+	slice2[1] = 2
+	slice2[2] = 3
+	slice2 = append( slice2, 4 )
+	slice2 = append( slice2, 5 )
+	slice2 = append( slice2, 6 )
+	fmt.Println( len( slice2 ), cap( slice2 ) )
+
+
+	slice3 := []int{1,2,3}
+	slice3 = append( slice3, 4 )
+	fmt.Println( slice3 )
 }
