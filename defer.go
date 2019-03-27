@@ -23,6 +23,5 @@ func main(){
 
 
 	panic( "this is error" )
-
 	fmt.Println( "还会继续执行吗" )			//panic 终止程序，所以不会有输出了
 }
