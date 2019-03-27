@@ -33,6 +33,7 @@ func main(){
 	fmt.Println( strone, str )
 
 
+	/*
 	slice2 := make([]int, 3, 5)
 	slice2[0] = 1
 	slice2[1] = 2
@@ -46,4 +47,5 @@ func main(){
 	slice3 := []int{1,2,3}
 	slice3 = append( slice3, 4 )
 	fmt.Println( slice3 )
+	*/
 }
