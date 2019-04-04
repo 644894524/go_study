@@ -35,7 +35,13 @@ func main(){
 	var cc = make( map[int]string )
 	cc[0] = "haah"
 	cc[1] = "xixi"
-	fmt.Println( len(cc) )
+	fmt.Println( cc[0] )
+
+	if cc[0] == "xixi" {
+
+	}else {
+
+	}
 
 	var arr = [...]int{ 1, 3, 5, 7, 9 }
 	for k, v := range arr {
