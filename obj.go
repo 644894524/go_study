@@ -42,8 +42,6 @@ func main(){
 	slice2 = append( slice2, 5 )
 	slice2 = append( slice2, 6 )
 	fmt.Println( len( slice2 ), cap( slice2 ) )
-
-
 	slice3 := []int{1,2,3}
 	slice3 = append( slice3, 4 )
 	fmt.Println( slice3 )
